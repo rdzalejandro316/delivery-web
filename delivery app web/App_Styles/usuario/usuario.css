@@ -1,0 +1,170 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+body {
+    background: #ecf0f1;
+    font-family: "Roboto", Arial;
+}
+
+.wrap {
+    width: 90%;
+    max-width: 500px;
+    padding: 40px;
+    margin: auto;
+    background: #ffffff;
+    box-shadow: 0px 0px 3px grey;
+}
+
+.label {
+    top: -12px;
+    font-size: 12px;
+    line-height: 12px;
+    color: #B6B6B6;
+}
+
+.contenedor-formulario {
+    width: 100%;
+    color: #f2f2f2;
+    padding: 50px;
+}
+
+.contenedor-formulario .formulario {
+     width: 100%;
+     margin: auto;
+}
+
+.contenedor-formulario .formulario .input-group {
+     position: relative;
+     margin-bottom: 32px;
+ }
+
+.contenedor-formulario .formulario .input-group input[type="text"],
+.contenedor-formulario .formulario .input-group input[type="password"] {
+    font-family: "Roboto", Arial;
+    font-size: 16px;
+    color: black;
+    width: 100%;
+    outline: none;
+    padding: 15px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #BBDEFB;
+}
+
+.contenedor-formulario .formulario .input-group input[type="text"]:focus,
+.contenedor-formulario .formulario .input-group input[type="text"]:active,
+.contenedor-formulario .formulario .input-group input[type="email"]:focus,
+.contenedor-formulario .formulario .input-group input[type="email"]:active,
+.contenedor-formulario .formulario .input-group input[type="password"]:focus,
+.contenedor-formulario .formulario .input-group input[type="password"]:active {
+    outline: none;
+    border-bottom: 2px solid #303F9F;
+}
+
+.contenedor-formulario .formulario .input-group input[type="text"].error,
+.contenedor-formulario .formulario .input-group input[type="email"].error,
+.contenedor-formulario .formulario .input-group input[type="password"].error {
+    border-bottom: 2px solid #D32F2F;
+}
+
+.contenedor-formulario .formulario .input-group input[type="text"].error + label,
+.contenedor-formulario .formulario .input-group input[type="email"].error + label,
+.contenedor-formulario .formulario .input-group input[type="password"].error + label {
+    color: #D32F2F;
+}
+
+ .contenedor-formulario .formulario .input-group label {
+    color: #303F9F;
+ }
+
+.contenedor-formulario .formulario .input-group label.label {
+    top: -12px;
+    font-size: 12px;
+    line-height: 12px;
+    color: #B6B6B6;
+}
+
+.contenedor-formulario .formulario input[type="submit"] {
+    background: #303F9F;
+    border-radius: 1px;
+    border: 2px solid #f2f2f2;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Roboto", Arial;
+    font-size: 16px;
+    padding: 15px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.contenedor-formulario .formulario input[type="submit"]:hover {
+    background: #1976D2;
+}
+
+.error {
+    color: red;
+}
+/*------active------*/
+.label .active-label {
+    position: relative;
+    top: -16px;
+    color: #999;
+    line-height: 12px;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.active-icono {
+    color: black;
+    margin-left: 4%;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.menu_p {
+    background-color: black;
+    height: 40px;
+}
+
+    .menu_p ul {
+        height: 100%;
+    }
+
+        .menu_p ul .rig {
+            float: right;
+        }
+
+            .menu_p ul .rig:hover {
+                color: white;
+                border-bottom: 1px solid #03A9F4;
+            }
+
+        .menu_p ul li {
+            margin-right: 20px;
+            top: 30%;
+            position: relative;
+            display: inline-block;
+        }
+
+            .menu_p ul li a {
+                color: white;
+                font-size: 15px;
+            }
+
+.usuario {
+    text-decoration: none;
+    color: white;
+    margin-left: 10px;
+    font-size: 15px;
+}
+
+    .usuario:hover {
+        color: #2980b9;
+    }

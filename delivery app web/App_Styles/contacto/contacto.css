@@ -1,0 +1,161 @@
+﻿* {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+body {
+    background-color: #ecf0f1;
+}
+
+.menu_p {
+    background-color: black;
+    height: 40px;
+}
+
+    .menu_p ul {
+        height: 100%;
+        /*text-align: right;*/
+    }
+
+        .menu_p ul .rig {
+            float: right;
+        }
+
+            .menu_p ul .rig:hover {
+                color: white;
+                border-bottom: 1px solid #03A9F4;
+            }
+
+        .menu_p ul li {
+            margin-right: 20px;
+            top: 30%;
+            position: relative;
+            display: inline-block;
+        }
+
+            .menu_p ul li a {
+                color: white;
+                font-size: 15px;
+            }
+
+.usuario {
+    text-decoration: none;
+    color: white;
+    margin-left: 10px;
+    font-size: 15px;
+}
+
+    .usuario:hover {
+        color: #2980b9;
+    }
+
+
+.contenedor {
+    width: 100%;
+    height: 80%;
+    position: absolute;
+}
+
+.con-contac {
+    position: relative;
+    width: 70%;
+    height: 90%;
+    margin: 0 auto;
+    margin-top: 30px;
+    background: white;
+    box-shadow: 10px 10px 15px grey;
+}
+
+
+.con-title {
+    width: 100%;
+    height: 20%;
+    background-color: #16a085;
+}
+
+.con-title-parrafo {
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    position: relative;
+    padding-top: 30px;
+}
+
+    .con-title-parrafo:after {
+        content: "";
+        width: 10px;
+        height: 1px;
+        background: white;
+        position: absolute;
+        -webkit-transform: translate(-30px,40px) scale(4.0, 0.9);
+        transform: translate(-30px,40px) scale(4.0, 0.9);
+    }
+
+.con-conten {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+}
+
+.con-menu {
+    width: 40%;
+    height: 100%;
+}
+
+    .con-menu ul {
+        width: 80%;
+        height: 80%;
+        margin-left: 10%;
+        margin-top: 10%;
+    }
+
+        .con-menu ul p {
+            padding-top: 10px;
+            color: #2980b9;
+            font-weight: bold;
+        }
+
+        .con-menu ul li {
+            padding-top: 10px;
+            color: #7f8c8d;
+        }
+
+        .con-menu ul button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: white;
+            border: none;
+            border: 1px solid #16a085;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+        }
+
+            .con-menu ul button a {
+                color: #16a085;
+            }
+
+            .con-menu ul button:hover {
+                background-color: #16a085;
+                color: white;
+                cursor: pointer;
+            }
+
+                .con-menu ul button:hover a {
+                    color: white;
+                }
+
+.con-map {
+    width: 60%;
+    height: 100%;
+}
+
+
+.actAsDiv {
+    width: 100%;
+    height: 100%;
+}
+
+#map {
+    height: 100%;
+}

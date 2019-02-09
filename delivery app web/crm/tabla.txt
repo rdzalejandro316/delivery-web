@@ -1,0 +1,44 @@
+CREATE TABLE CrAct_info (
+	idrow int IDENTITY(1,1) PRIMARY KEY,
+	cod_ter char(15) NOT NULL,
+	cod_mer char(3),    
+	fecha_reg datetime,
+	cod_punto char(3),
+	porcentaje decimal(5, 2),
+	val_ini varchar(50),
+	val_fin varchar(50)
+)
+
+CREATE TABLE CrHis_info (
+	idrow int IDENTITY(1,1) PRIMARY KEY,
+	cod_mer char(3) NOT NULL,    
+	fecha datetime,
+	codigo char(3),
+	evento varchar(200)
+)
+
+create table Crseg_cli(
+	idrow int IDENTITY(1,1) PRIMARY KEY,
+	fec_seg datetime,
+	cod_ter char(15) NOT NULL,
+	cod_mer char(3),  	
+	cod_con char(2),  
+	cod_camp char(2),				
+	fec_comp date,
+	hora_ini time,
+	hora_fin time,
+	observ varchar(100),
+	cod_consig char(2),
+	contacto varchar(100),
+	estado char(1),				
+	recordar char(1),
+	contacto_cli char(2),
+	tiempo_contacto varchar(50)	
+)
+
+
+create table CrTemCampa(
+		idrow int IDENTITY(1,1) PRIMARY KEY,
+		cod_ter char(15) NOT NULL,
+		cod_camp char(3) NOT NULL,
+)

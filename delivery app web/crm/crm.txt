@@ -1,0 +1,97 @@
+Sia.PublicarPnt(9371,"DevolucionPrenda");
+Sia.PublicarPnt(9303,"PvTrasladosBodega");
+Sia.PublicarPnt(9306,"PvReimprimeFacturaNC");
+Sia.PublicarPnt(9414,"AnalisisPV");
+
+Sia.PublicarPnt(9353,"SeguimientoCliente");
+Sia.TabU(9353);	
+
+Sia.PublicarPnt(9387,"ClienteCelebracion");
+Sia.TabU(9387);	
+
+Sia.PublicarPnt(9390,"PuntosActulizacion");
+Sia.TabU(9390);	
+
+Sia.PublicarPnt(9405,"AsignacionClientes");
+Sia.TabU(9405);	
+
+Sia.PublicarPnt(9411,"CampaComercial");
+Sia.TabU(9411);	
+
+Sia.PublicarPnt(9417,"AsignacionCampa");
+Sia.TabU(9417);	
+
+Sia.PublicarPnt(9418,"InformeMarca");
+Sia.TabU(9418);	
+
+
+Sia.PublicarPnt(9419,"InformeCumple");
+Sia.TabU(9419);	
+
+Sia.PublicarPnt(9422,"InformeCampa");
+Sia.TabU(9422);	
+
+Sia.PublicarPnt(9423,"InformeCliNuevos");
+Sia.TabU(9423);	
+
+
+select linea.cod_tip,cliente.cod_ter,cliente.nom_ter,cliente.tel1,cliente.email,linea.nom_tip, sum( iif(cabeza.cod_trn between '004' and '005',cuerpo.cantidad,-cuerpo.cantidad) ) as cantidad_linea, sum( iif(cabeza.cod_trn between '004' and '005',cuerpo.subtotal,-cuerpo.subtotal) ) as total_Linea, cliente.cod_ven,vendedor.nom_mer from InCab_doc as cabeza  
+inner join InCue_doc as cuerpo on cuerpo.idregcab = cabeza.idreg 
+inner join InMae_ref as referencia on referencia.cod_ref = cuerpo.cod_ref
+inner join InMae_tip as linea on linea.cod_tip = referencia.cod_tip
+inner join comae_ter as cliente on cliente.cod_ter = cabeza.cod_cli
+inner join InMae_mer as vendedor on vendedor.cod_mer = cliente.cod_ven
+where cabeza.cod_trn between '004' and '009'
+group by linea.cod_tip,cliente.cod_ter,cliente.nom_ter,cliente.tel1,cliente.email,linea.nom_tip,cliente.cod_ven,vendedor.nom_mer
+order by cliente.nom_ter
+
+
+
+select tercero.cod_ven,tercero.nom_ter,seguimineto.cod_con from comae_ter as tercero 
+inner join CrMae_cli as cliente on cliente.cod_ter = tercero.cod_ter 
+full join Crseg_cli as seguimineto on seguimineto.cod_ter = tercero.cod_ter 
+where clasific='2' and tercero.cod_ven='01' and seguimineto.cod_con='01' 
+group by tercero.cod_ven,tercero.nom_ter,seguimineto.cod_con
+
+
+librerias
+Syncfusion.Data.WPF
+Syncfusion.Grid.WPF
+Syncfusion.SfGrid.WPF
+Syncfusion.Shared.WPF
+Syncfusion.Tools.Wpf
+excel
+Syncfusion.GridConverter.WPF
+Syncfusion.SfGridConverter.WPF
+Syncfusion.XlsIO.Base
+Syncfusion.XlsIO.WPF
+
+
+PANTALLAS
+---------cliente----------
+seguimiento de clientes id:89 tag:9353
+asignacion de cliente id:120 tag:9405
+asignacion de campaña id:121 tag:9417
+
+---------informe----------
+cumpleaños cliente id:107 tag:9387
+
+---------informe----------
+puntos por actualizacion id:109 tag:9390
+informe marca id:116 tag:9418
+informe cumple id:117 tag:9419
+informe campaña id:118 tag:9422
+informe clientes nuevos id:119 tag:9423
+
+---------campaña----------
+campañas id:115 tag:9412
+cargo id:94 tag:9369
+puntos id:108 tag:9389
+ocupacion id:95 tag:9372
+profesion id:106 tag:9373
+concepto id:112 tag:9413
+ocupacion id:95 tag:9372
+profesion id:106 tag:9373
+talla id:113 tag:9415
+
+

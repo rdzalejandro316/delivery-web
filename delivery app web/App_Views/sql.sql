@@ -1,0 +1,18 @@
+
+                _sql.Append("select doc.idrow,fecha_ingreso,destin.nom_destin,doc.contacto,doc.cod_predio,doc.remitente,courier.nom_courier,doc.guia,tipo.nom_tipoing,operador.nom_operador,doc.nota,fecha_entrega,cod_operador_e,operadore.nom_operador as nom_operador_e,nota_entrega,doc.cod_autorizado,autorizado.nom_autorizado,");
+                _sql.Append("CASE doc.estado WHEN 1 THEN 'Recibido' WHEN 2 THEN 'Reparto' WHEN 3 THEN 'Entregado' WHEN 4 THEN 'Devolucion' ELSE 'Anulado' END as estado "); //0=anulado
+                _sql.Append("from doc_ingreso as doc ");
+                _sql.Append("inner join mae_destinatarios as destin on doc.cod_destin = destin.cod_destin ");                
+                _sql.Append("inner join mae_predios predios on predios.cod_predio = doc.cod_predio");
+                _sql.Append("inner join mae_courier courier on courier.cod_courier = doc.cod_courier ");
+                _sql.Append("inner join mae_tipoingreso tipo on tipo.cod_tipoing = doc.cod_tipoing ");
+                _sql.Append("inner join mae_operadores operador on operador.cod_operador = doc.cod_operador ");
+                _sql.Append("left join mae_operadores operadore on operadore.cod_operador = doc.cod_operador_e ");
+                _sql.Append("left join mae_autorizados autorizado on autorizado.cod_autorizado = doc.cod_autorizado ");
+                _sql.Append(" where  convert(date,doc.fecha_ingreso,103) between '" + FechaIni.Text + "' and '" + FechaFin.Text + "' ");
+                _sql.Append("  order by doc.fecha_ingreso ");
+
+
+select doc.idrow,fecha_ingreso,destin.nom_destin,doc.contacto,doc.cod_predio,doc.remitente,courier.nom_courier,doc.guia,tipo.nom_tipoing,operador.nom_operador,doc.nota,fecha_entrega,cod_operador_e,operadore.nom_operador as nom_operador_e,nota_entrega,doc.cod_autorizado,autorizado.nom_autorizado,CASE doc.estado WHEN 1 THEN 'Recibido' WHEN 2 THEN 'Reparto' WHEN 3 THEN 'Entregado' WHEN 4 THEN 'Devolucion' ELSE 'Anulado' END as estado from doc_ingreso as doc inner join mae_destinatarios as destin on doc.cod_destin = destin.cod_destin inner join mae_predios predios on predios.cod_predio = doc.cod_predio inner join mae_courier courier on courier.cod_courier = doc.cod_courier  inner join mae_tipoingreso tipo on tipo.cod_tipoing = doc.cod_tipoing inner join mae_operadores operador on operador.cod_operador = doc.cod_operador left join mae_operadores operadore on operadore.cod_operador = doc.cod_operador_e left join mae_autorizados autorizado on autorizado.cod_autorizado = doc.cod_autorizado where  doc.cod_predio = '1-02-201' order by doc.fecha_ingreso        
+
+/*select doc.idrow,fecha_ingreso,destin.nom_destin,doc.contacto,doc.cod_predio,doc.remitente,courier.nom_courier,doc.guia,tipo.nom_tipoing,operador.nom_operador,doc.nota,fecha_entrega,cod_operador_e,operadore.nom_operador as nom_operador_e,nota_entrega,doc.cod_autorizado,autorizado.nom_autorizado,CASE doc.estado WHEN 1 THEN 'Recibido' WHEN 2 THEN 'Reparto' WHEN 3 THEN 'Entregado' WHEN 4 THEN 'Devolucion' ELSE 'Anulado' END as estado from doc_ingreso as doc inner join mae_destinatarios as destin on doc.cod_destin = destin.cod_destin inner join mae_predios predios on predios.cod_predio = doc.cod_predio inner join mae_courier courier on courier.cod_courier = doc.cod_courier  inner join mae_tipoingreso tipo on tipo.cod_tipoing = doc.cod_tipoing inner join mae_operadores operador on operador.cod_operador = doc.cod_operador left join mae_operadores operadore on operadore.cod_operador = doc.cod_operador_e left join mae_autorizados autorizado on autorizado.cod_autorizado = doc.cod_autorizado where doc.cod_predio = '1-02-201';*/

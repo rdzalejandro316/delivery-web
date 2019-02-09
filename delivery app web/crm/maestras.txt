@@ -1,0 +1,79 @@
+create table CrMae_cli(
+	idrow int IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	cod_ter char(15) NOT NULL,
+	num_doc char(15),
+	genero char(1),
+	est_civil char(1),
+	nom_emp varchar(50),
+	act_emp varchar(50),
+	hobbies varchar(50),
+	ct_cel char(1),
+	ct_email char(1),
+	ct_corres char(1),
+	ct_whats char(1),
+	ct_sms char(1),
+	cod_cargo char(3),
+	cod_prof char(3),
+	cod_ocup char(3),
+	image_name varchar(50),
+	img_cli image,
+	ran_edad char(10),
+	talla_zap_tenn char(3),
+	talla_pant_fald char(3),
+	talla_vest_traj char(3),
+	talla_camisa char(3)	
+)
+
+
+create table CrMae_cargo(
+	idrow int IDENTITY(1,1) PRIMARY KEY,
+	cod_cargo char(3) NOT NULL,
+	nom_cargo varchar(50)
+)
+
+create table CrMae_profesion(
+	idrow int IDENTITY(1,1) PRIMARY KEY,
+	cod_prof char(3) NOT NULL,
+	nom_prof varchar(50)
+)
+
+create table CrMae_ocupacion(
+	idrow int IDENTITY(1,1) PRIMARY KEY,
+	cod_ocup char(3) NOT NULL,
+	nom_ocup varchar(50)
+)
+
+create table CrMae_puntos(
+	idrow int IDENTITY(1,1) PRIMARY KEY,
+	cod_punto char(3) NOT NULL,
+	nombre_p varchar(50),
+	porcentaje decimal(5, 2)
+)
+
+create table CrMae_concepto(
+	idrow int IDENTITY(1,1) PRIMARY KEY,
+	cod_con char(3) NOT NULL,
+	nom_con varchar(60)
+)
+
+
+create table CrMae_campa(
+	idrow int IDENTITY(1,1) PRIMARY KEY,
+	cod_camp char(3) NOT NULL,
+	nom_camp varchar(60),
+	estado char(1)
+)
+
+
+create table CrMae_talla(
+	idrow int IDENTITY(1,1) PRIMARY KEY,
+	cod_talla char(3) NOT NULL,
+	nom_talla varchar(10)
+)
+
+create table CrMae_ActEmp(
+	idrow int IDENTITY(1,1) PRIMARY KEY,
+	cod_actEmp char(3) NOT NULL,
+	nom_actEmp varchar(30)
+)
+
